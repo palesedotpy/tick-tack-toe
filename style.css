@@ -84,8 +84,8 @@
     position: absolute;
 }
 .grid {
-    width: clamp(180px, 25vw, 400px);
-    height: clamp(180px, 25vw, 400px);
+    width: clamp(200px, 25vw, 400px);
+    height: clamp(200px, 25vw, 400px);
 
     display: flex;
     flex-direction: column;
