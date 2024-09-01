@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+* {
+    font-family: "Outfit", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --black: #2b2d42;
+    --gray: #8d99ae;
+    --white: #edf2f4;
+    --rose: #ef233c;
+    --red: #ef233c;
+    --shadow: rgb(237, 224, 213) 0px 0px 100px 0px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    border: 1px solid lightgrey;
+    float: left;
+}
+[class*="col-"]:hover {
+    background-color: lightgrey;
+}
+.row {
+    display: flex;
+    flex: 1;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.container {
+    
+}
+.navbar {
+    margin-top: 20px;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar i{
+    color: var(--black);
+    font-size: clamp(30px, 2vw, 60px);
+    transition: 100ms;
+}
+.navbar > .social {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar i:hover {
+    font-size: 2.5em;
+}
+
+.game {
+    padding: 50px;
+    border-radius: 4px;
+
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.grid {
+    width: clamp(150px, 25vw, 400px);
+    height: clamp(150px, 25vw, 400px);
+
+    display: flex;
+    flex-direction: column;
+}
+.block {
+    font-size: clamp(30px, 1vw, 80px);
+    color: var(--black);
+    background-color: transparent;
+
+    border: none;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.b1 {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+.b2 {
+    border-bottom: 1px solid;
+}
+.b3 {
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+}
+.b4 {
+    border-right: 1px solid;
+}
+.b6 {
+    border-left: 1px solid;
+}
+.b7 {
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+.b8 {
+    border-top: 1px solid;
+
+}
+.b9 {
+    border-top: 1px solid;
+    border-left: 1px solid;
+
+}
+.end-game-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+
+    display: none;
+}
+.end-game-info > .winner-banner {
+    font-size: 20px;
+}
+.end-game-info > .reset {
+    font-size: 20px;
+    height: 30px;
+    width: 100%;
+
+    color: var(--white);
+    background-color: var(--rose);
+    
+    border: 1px solid;
+    border-radius: 4px;
+}
+.end-game-info > .reset:hover {
+    color: var(--black);
+    background-color: transparent;
+    border-color: var(--rose);
+}

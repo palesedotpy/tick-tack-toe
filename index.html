@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="navbar">
+                <div class="social">
+                    <a href="https://github.com/palesedotpy/login-page/tree/master" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://www.instagram.com/palese.py/" target="_blank"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="other">
+                    <i class="fa fa-gear"></i>
+                </div>
+            </div>
+
+            <div class="game">
+                <div class="grid">
+                    <div class="row">
+                        <button class="col-4 block b1" onclick="pressButton(0, 0, 'b1')"> <i id="b1"></i></button>
+                        <button class="col-4 block b2" onclick="pressButton(0, 1, 'b2')"> <i id="b2"></i></button>
+                        <button class="col-4 block b3" onclick="pressButton(0, 2, 'b3')"> <i id="b3"></i></button>
+                    </div>
+                    <div class="row">
+                        <button class="col-4 block b4" onclick="pressButton(1, 0, 'b4')"> <i id="b4"></i></button>
+                        <button class="col-4 block b5" onclick="pressButton(1, 1, 'b5')"> <i id="b5"></i></button>
+                        <button class="col-4 block b6" onclick="pressButton(1, 2, 'b6')"> <i id="b6"></i></button>
+                    </div>
+                    <div class="row">
+                        <button class="col-4 block b7" onclick="pressButton(2, 0, 'b7')"> <i id="b7"></i></button>
+                        <button class="col-4 block b8" onclick="pressButton(2, 1, 'b8')"> <i id="b8"></i></button>
+                        <button class="col-4 block b9" onclick="pressButton(2, 2, 'b9')"> <i id="b9"></i></button>
+                    </div>
+                </div>
+                <div class="end-game-info" id="end-game-info">
+                    <p class="winner-banner" id="winner-banner"></p>
+                    <button class="reset" id="reset" onclick="reset()"><strong>RESET</strong></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/b5f3b51543.js" crossorigin="anonymous"></script>
+    </body>
+</html>
