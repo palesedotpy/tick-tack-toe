@@ -1,17 +1,17 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 * {
-    font-family: "Outfit", sans-serif;
+    font-family: "Lexend", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 :root {
     --black: #2b2d42;
     --gray: #8d99ae;
-    --white: #edf2f4;
+    --white: #fffffc;
     --rose: #ef233c;
     --red: #ef233c;
     --shadow: rgb(237, 224, 213) 0px 0px 100px 0px;
@@ -46,29 +46,22 @@
     clear: both;
     display: table;
 }
-.navbar {
-    margin-top: 20px;
-    height: 50px;
+
+
+.container{
+    background-color: var(--white);
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-}
-.navbar i{
-    color: var(--black);
-    font-size: clamp(30px, 2vw, 60px);
-    transition: 100ms;
-}
-.navbar > .social {
-    gap: 15px;
-    display: flex;
-    align-items: center;
-}
-.navbar i:hover {
-    font-size: 2.5em;
+    
+    flex-direction: column;
 }
 
 .game {
+    height: 50%;
+    width: fit-content;
+
     padding: 50px;
     border-radius: 4px;
 
@@ -77,11 +70,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
 }
 .grid {
     width: clamp(300px, 25vw, 400px);
@@ -124,12 +112,10 @@
 }
 .b8 {
     border-top: 1px solid;
-
 }
 .b9 {
     border-top: 1px solid;
     border-left: 1px solid;
-
 }
 .end-game-info {
     display: flex;
@@ -144,7 +130,6 @@
 }
 .end-game-info > .reset {
     font-size: 20px;
-    height: 30px;
     width: 100%;
 
     color: var(--white);

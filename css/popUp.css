@@ -1,0 +1,59 @@
+
+.pop-up-settings {
+    padding: 30px;
+    width: clamp(300px, 30vw, 600px);
+
+    font-size: 1.3em;
+    background-color: var(--white);
+    border-radius: 4px;
+
+    box-shadow: var(--shadow); 
+
+    display: none;
+    justify-content: center;
+    
+    top: 50% ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+.pop-up-settings > .settings-container {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+}
+.pop-up-settings > .settings-container > .settings-title {
+    text-align: center;
+}
+
+.pop-up-settings > .settings-container > .input-names{
+    display: flex;
+    flex-direction: column;
+}
+.pop-up-settings > .settings-container > .input-names > input{
+    padding: 5px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    font-size: 15px;
+}
+.pop-up-settings > .settings-container > .input-names > input:focus{
+    border-color: var(--black);
+}
+.pop-up-settings > .settings-container > .save-settings {
+    text-align: center;
+}
+.pop-up-settings > .settings-container > .save-settings > input {
+    font-size: 15px;
+    text-align: center;
+    width: 80px;
+
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+
+    transition: 200ms;
+}
+.pop-up-settings > .settings-container > .save-settings > input:hover {
+    border-color: var(--black);
+}

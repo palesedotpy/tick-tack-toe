@@ -4,11 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="style.css">    
+        <link rel="stylesheet" href="css/main.css">    
+        <link rel="stylesheet" href="css/popUp.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/victoryContainer.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="container">
 
             <div class="navbar">
                 <div class="social">
@@ -16,11 +19,11 @@
                     <a href="https://www.instagram.com/palese.py/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
                 <div class="other">
-                    <i class="fa fa-gear"></i>
+                    <i class="fa fa-gear settings-icon" id="settings" onclick="toggleSettings()"></i>
                 </div>
             </div>
 
-            <div class="game">
+            <div class="game" id="game-container">
                 <div class="grid">
                     <div class="row">
                         <button class="col-4 block b1" onclick="pressButton(0, 0, 'b1')"> <i id="b1"></i></button>
@@ -39,13 +42,44 @@
                     </div>
                 </div>
                 <div class="end-game-info" id="end-game-info">
-                    <p class="winner-banner" id="winner-banner"></p>
-                    <button class="reset" id="reset" onclick="reset()"><strong>RESET</strong></button>
+                    <button class="reset" id="reset" onclick="reset()">reset</button>
+                </div>
+
+                <div class="victoryCounter">
+                    <div class="player1CounterCointainer" id="player2-counter-container">
+                        <p class="playerLabel" id="player1-name"></p>
+                        <span class="playerCounter" id="player1-counter"></span>
+                    </div>
+                    <div class="player2CounterCointainer" id="player2-counter-container">
+                        <p class="playerLabel" id="player2-name"></p>
+                        <span class="playerCounter" id="player2-counter"></span>
+                    </div>
+                </div>  
+            </div>  
+        </div>
+
+        <div class="pop-up-settings" id="pop-up">
+            <div class="settings-container">
+                <div class="settings-title">
+                    <h3>Settings</h3>
+                </div>
+                <div class="input-names">
+                    <label for="player1Name">Player 1</label>
+                    <input type="text" id="player1Name"> <br>
+                    <label for="player2Name">Player 2</label>
+                    <input type="text" id="player2Name">
+                </div>
+                <div class="save-settings">
+                    <p class="warning-banner" id="warning-banner"></p>
+                    <input type="button" value="save" onclick="saveSettings()">
                 </div>
             </div>
         </div>
 
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/pop-up.js"></script>
+        <script src="js/victory-counter.js"></script>
+        <script src="js/computedPlayer.js"></script>
         <script src="https://kit.fontawesome.com/b5f3b51543.js" crossorigin="anonymous"></script>
     </body>
 </html>

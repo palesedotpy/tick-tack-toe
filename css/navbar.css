@@ -1,0 +1,24 @@
+
+.navbar {
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.navbar i{
+    color: var(--black);
+    font-size: clamp(30px, 2vw, 60px);
+    transition: 100ms;
+}
+.navbar > .social {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+.navbar i:hover {
+    font-size: 2.5em;
+}
