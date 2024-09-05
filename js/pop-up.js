@@ -1,3 +1,7 @@
+
+import { player1, player2 } from "./script.js";
+import { updateDisplayedNames } from "./victory-counter.js";
+
 var popUp = document.getElementById("pop-up");
 var container = document.getElementById("container");
 
@@ -40,13 +44,12 @@ function toggleSettings() {
     }
     settingsAreOpen = !settingsAreOpen;
 
-    player1InputField.value = player1Name;
-    player2InputField.value = player2Name;
-
+    player1InputField.value = player1.name;
+    player2InputField.value = player2.name;
 }
+window.toggleSettings = toggleSettings;
 
 function saveSettings() {
-
     let player1NameLength = player1InputField.value.length;
     let player2NameLength = player2InputField.value.length;
 
@@ -58,11 +61,12 @@ function saveSettings() {
         warningBanner.innerText = "Invalid input";
     }
     else {
-        player1Name = player1InputField.value;
-        player2Name = player2InputField.value;
-        updateDisplayedNames();
-        hideSettings();
+        player1.name = player1InputField.value;
+        player2.name = player2InputField.value;
+        updateDisplayedNames(player1.name, player2.name);
+        hideSettings(); 
+        warningBanner.innerText = "";
         settingsAreOpen = !settingsAreOpen;
     }
-
 }
+window.saveSettings = saveSettings;

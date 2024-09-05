@@ -5,12 +5,12 @@ var player1CounterLabel = document.getElementById("player1-counter");
 var player2CounterLabel = document.getElementById("player2-counter");
 
 
-function updateDisplayedNames() {
+export function updateDisplayedNames(player1Name, player2Name) {
     player1NameLabel.innerHTML = player1Name;
     player2NameLabel.innerHTML = player2Name;
 }
 
-function updateDisplayedCounters() {
+export function updateDisplayedCounters(player1WinCounter, player2WinCounter) {
     player1CounterLabel.innerHTML = player1WinCounter;
     player2CounterLabel.innerHTML = player2WinCounter;
 }

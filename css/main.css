@@ -49,17 +49,10 @@
 
 
 .container{
-    background-color: var(--white);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    flex-direction: column;
+    background-color: var(--white);    
 }
 
 .game {
-    height: 50%;
     width: fit-content;
 
     padding: 50px;
@@ -67,19 +60,24 @@
 
     box-shadow: var(--shadow);
 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 .grid {
-    width: clamp(300px, 25vw, 400px);
-    height: clamp(300px, 25vw, 400px);
+    width: clamp(250px, 25vw, 400px);
+    height: clamp(250px, 25vw, 400px);
 
     display: flex;
     flex-direction: column;
 }
 .block {
-    font-size: clamp(30px, 1vw, 80px);
+    font-size: clamp(30px, 2.5vw, 40px);
     color: var(--black);
     background-color: transparent;
 

@@ -1,45 +1,52 @@
 
-class computedPlayer {
-    constructor(isEnabled, name, wins) {
+export class computedPlayer {
+    constructor(isEnabled, mode) {
         this.isEnabled = isEnabled;
-        this.name = name;
-        this.wins = wins;
+        this.mode = mode;
     }
 
     setIsEnabled(isEnabled) {
         this.isEnabled = isEnabled;
     }
-    get () {
+    getIsEnabled () {
         return this.isEnabled;
     }
 
-    setName (name) {
-        this.name = name;
+    setMode(mode) {
+        this.mode = mode;
     }
-    get () {
-        return this.name;
-    }
-
-    setWins(wins) {
-        this.wins = wins;
-    }
-    get() {
-        return this.wins;
+    getMode () {
+        return this.mode;
     }
 
-    makeChoice () {
-        if (getIsEnabled()) {
-            let randomRow = Math.floor(Math.random() * 3);
-            let randomColumn = Math.floor(Math.random() * 3);
-            
-            matrix[randomRow][randomColumn] = 2;
 
-            turn = 1;
 
+    makeChoice (updateMatrixFunction, addClassFunction, matrix) {
+        let randomRow;
+        let randomColumn;
+
+        let isValidChoice = false;
+        // if the counter exceed the number of blocks it means that is draw
+        let triesCounter = 0;
+
+        while (
+            !isValidChoice &&
+            triesCounter < 12
+        ) {
+            randomRow = Math.floor(Math.random() * 3);
+            randomColumn = Math.floor(Math.random() * 3);
+
+            if (matrix[randomRow][randomColumn] === 0) {
+                isValidChoice = true;
+            }
+            triesCounter++;
         }
 
+        let block = (randomRow * 3) + (randomColumn + 1);
+        block = document.getElementById(`b${block}`);
+        
+        updateMatrixFunction(randomRow, randomColumn, 2);
+        
+        addClassFunction(block, "fa-circle-o");
     }
 }
-
-const bot = new computedPlayer(true, "John", 0);
-bot.makeChoice();
