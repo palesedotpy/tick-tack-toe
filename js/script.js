@@ -2,7 +2,7 @@
 import { updateDisplayedNames, updateDisplayedCounters } from "./victory-counter.js";
 import { computedPlayer } from "./computedPlayer.js";
 
-const bot = new computedPlayer(true, 'easy');
+export const bot = new computedPlayer(false, 'easy');
 
 // Local matrix which contains player's choices
 var matrix = [
@@ -46,18 +46,17 @@ function addClass(element, cssClass) {
 }
 /* Update user grid when one of the spots are pressed */
 function pressButton(x, y, blockId) {
+    console.log(bot);
     let block = document.getElementById(blockId);
 
     if (!win) {
         /* DOM's element of a block with id 'blockId'   */
-        /* Change turn if player 1 pressed a button different from 0 */
-        console.log(turn);
+        /* Change turn if player 1 pressed a button different from 0 */ 
         if (turn === 1 && matrix[x][y] === 0) {
             updateMatrix(x, y, turn);
             /* Changing circle icon to cross */
             addClass(block, "fa-close");
             turn = 2;
-        console.log(turn);
         }
         if (!bot.getIsEnabled()) {
             if (turn === 2 && matrix[x][y] === 0){
@@ -196,7 +195,7 @@ function checkWinCondition() {
     
 }
 
-function reset() {
+export function reset() {
     matrix = [
         [0, 0, 0],
         [0, 0, 0],

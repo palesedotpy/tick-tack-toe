@@ -19,9 +19,7 @@ export class computedPlayer {
         return this.mode;
     }
 
-
-
-    makeChoice (updateMatrixFunction, addClassFunction, matrix) {
+    easyMode(updateMatrixFunction, addClassFunction, matrix) {
         let randomRow;
         let randomColumn;
 
@@ -48,5 +46,26 @@ export class computedPlayer {
         updateMatrixFunction(randomRow, randomColumn, 2);
         
         addClassFunction(block, "fa-circle-o");
+    }
+
+    hardMode() {
+        // TODO
+    }
+
+    makeChoice (updateMatrixFunction, addClassFunction, matrix) {
+
+
+
+        switch (this.getMode()) {
+            case 'easy':
+                this.easyMode(updateMatrixFunction, addClassFunction, matrix);
+                break;
+            case 'hard':
+                console.log("hard");
+                this.hardMode();
+                break;
+            default:
+                console.log(this.getMode());
+        }
     }
 }

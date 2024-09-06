@@ -1,0 +1,31 @@
+
+.toggle-button {
+    height: 25px;
+    width: 45px;
+
+    background-color: lightgray;
+    position: relative;
+    border-radius: 20px;
+
+    transition: .4s;
+}
+
+.toggle-button::before {
+    content: "";
+    background-color: white;
+    height: 18px;
+    width: 18px;
+    top: 3px;
+    left: 4px;
+    position: absolute;
+    border-radius: 50%;
+
+    transition: .4s;
+}
+.toggle-button.active::before {
+    transform: translateX(18px);
+}
+
+.toggle-button.active {
+    background-color: var(--rose);
+}

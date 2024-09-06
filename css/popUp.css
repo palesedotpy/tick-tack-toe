@@ -35,25 +35,58 @@
 .pop-up-settings > .settings-container > .input-names > input{
     padding: 5px;
     border: 1px solid var(--gray);
-    border-radius: 4px;
+    border-radius: 4px; 
     font-size: 15px;
 }
 .pop-up-settings > .settings-container > .input-names > input:focus{
     border-color: var(--black);
 }
+
+.bot-settings {
+
+    width: 200px;
+    height: auto;
+
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.bot-settings .bot-enabled{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.bot-settings p {
+    font-size: 20px;
+}
+.bot-settings select {
+    padding: 5px;
+    border-radius: 4px;
+    background-color: var(--white);
+    border: 1px solid;
+}
+
 .pop-up-settings > .settings-container > .save-settings {
     text-align: center;
 }
 .pop-up-settings > .settings-container > .save-settings > input {
     font-size: 15px;
     text-align: center;
-    width: 80px;
+    width: 100px;
+
+    background-color: var(--white);
 
     border: 1px solid var(--gray);
     border-radius: 4px;
 
-    transition: 200ms;
+    transition: .4s;
 }
 .pop-up-settings > .settings-container > .save-settings > input:hover {
-    border-color: var(--black);
+    color: var(--white);
+    border-color: var(--gray);
+    background-color: var(--rose);
 }

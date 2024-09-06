@@ -1,5 +1,5 @@
 
-import { player1, player2 } from "./script.js";
+import { player1, player2, bot, reset } from "./script.js";
 import { updateDisplayedNames } from "./victory-counter.js";
 
 var popUp = document.getElementById("pop-up");
@@ -53,6 +53,15 @@ function saveSettings() {
     let player1NameLength = player1InputField.value.length;
     let player2NameLength = player2InputField.value.length;
 
+    let botToggleButton = document.getElementById("toggleBtn");
+    let botDifficulty = document.getElementById("bot-difficulty-selection");
+
+    if (botToggleButton.classList.contains("active")) {
+        bot.setIsEnabled(true);
+        bot.setMode(botDifficulty.value);
+    }
+
+
     if (
         (player1NameLength > 10 || player1NameLength <= 0) ||
         (player2NameLength > 10 || player2NameLength <= 0)
@@ -68,5 +77,7 @@ function saveSettings() {
         warningBanner.innerText = "";
         settingsAreOpen = !settingsAreOpen;
     }
+
+    reset();
 }
 window.saveSettings = saveSettings;
