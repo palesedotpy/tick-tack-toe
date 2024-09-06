@@ -56,11 +56,9 @@ function saveSettings() {
     let botToggleButton = document.getElementById("toggleBtn");
     let botDifficulty = document.getElementById("bot-difficulty-selection");
 
-    if (botToggleButton.classList.contains("active")) {
-        bot.setIsEnabled(true);
-        bot.setMode(botDifficulty.value);
-    }
-
+   
+    botToggleButton.classList.contains("active") ? bot.setIsEnabled(true) : false;
+    bot.setMode(botDifficulty.value);
 
     if (
         (player1NameLength > 10 || player1NameLength <= 0) ||

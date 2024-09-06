@@ -50,6 +50,7 @@ export class computedPlayer {
 
     hardMode() {
         // TODO
+        alert("soon");
     }
 
     makeChoice (updateMatrixFunction, addClassFunction, matrix) {
